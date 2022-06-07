@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MvcBlog.Models.Kategori>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -11,6 +11,12 @@
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
+            @foreach (var item in Model)
+            {
+                <ul>
+                    <li>@item.KategoriAd</li>
+                </ul>
+            }
         </nav>
     </div><!-- End Page Title -->
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcBlog.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace MvcBlog.Controllers
 {
     public class AdminController : Controller
     {
+        MvcBlogDB db = new MvcBlogDB();
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            var sorgu = db.Kategoris.ToList();
+            return View(sorgu);
         }
     }
 }
